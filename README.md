@@ -53,3 +53,18 @@ then
   /sbin/ifup --force 'wlan0'
 fi
 ```
+
+# Or
+
+```
+ping -c4 192.168.1.1 > /dev/null
+ 
+if [ $? != 0 ] 
+then
+  echo "No network connection, restarting wlan0"  
+  sudo ip link set wlan0 down
+  sleep 2
+  sudo ip link set wlan0 up
+fi
+```
+
