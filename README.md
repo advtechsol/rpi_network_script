@@ -3,7 +3,7 @@ The Raspberry Pi tends to drop network connection (especially wireless wifi) rat
 
 However, it's possible to detect wifi connection loss and perform upon it. It's easiest to just do a full system reboot.  
 
-# checkwifi.sh.   
+# checkwifi.sh   
 Store this script in /usr/local/bin/checkwifi.sh.  
 
 ```
