@@ -3,7 +3,7 @@ The Raspberry Pi tends to drop network connection (especially wireless wifi) rat
 
 However, it's possible to detect wifi connection loss and perform upon it. It's easiest to just do a full system reboot.  
 
-checkwifi.sh. 
+# checkwifi.sh.   
 Store this script in /usr/local/bin/checkwifi.sh.  
 
 ```
@@ -27,7 +27,7 @@ Make sure the script has the correct permissions to run (thanks for the tip Jaso
 
 `sudo chmod 775 /usr/local/bin/checkwifi.sh`
 
-crontab
+# crontab
 SSH into the Raspberry Pi and open up the crontab editor by typing `crontab -e`.  
 
 Add the following line:
@@ -36,9 +36,10 @@ Add the following line:
 This runs the script we wrote every 5 minutes as sudo (so you have permission to do the shutdown command), writing its output to /dev/null so it won't clog your syslog.  
 
 Done.  
+
 Exit the crontab editor, reboot your Raspberry Pi (just to make sure) and from now on it'll reboot when it drops connection. Combine this with running your scripts on boot and you have a powerful, standalone system running.  
 
-Just restart network instead of reboot  
+#Just restart network instead of reboot  
 Because many things could have gone wrong with a network loss and our application itself needs to adapt we prefer a full reboot. But after alot of people were shouting "that's just too much", you can also try to just restart the wireless connection:  
 
 ```
